@@ -1,7 +1,7 @@
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/epmnzava/annoucement.svg?style=flat-square)](https://packagist.org/packages/epmnzava/annoucement)
 [![Total Downloads](https://img.shields.io/packagist/dt/epmnzava/annoucement.svg?style=flat-square)](https://packagist.org/packages/epmnzava/annoucement)
-![GitHub Actions](https://github.com/epmnzava/annoucement/actions/workflows/main.yml/badge.svg)
+![GitHub Actions](https://github.com/dbrax/annoucement/actions/workflows/main.yml/badge.svg)
 
 A laravel package module to add annoucement functionalities on your laravel application 
 
