@@ -20,7 +20,6 @@
         "php": "^7.4|^8.0",
         "livewire/livewire": "^2.4",
         "illuminate/support": "^8.0",
-        "spatie/laravel-activitylog": "^3.16",
         "spatie/laravel-medialibrary": "^9.0.0",
         "spatie/laravel-permission": "^4.0"
     },
