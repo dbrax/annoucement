@@ -27,7 +27,7 @@ class CreateUserAnnoucementTable extends Migration
             $table->string('annoucementid');
             $table->string('userid'); // annoucment sent to a particular user
             $table->integer("read")->default(0); // flag that checks if a notification has been read or not
-            $table->timestamp("read_at");
+            $table->timestamp("read_at")->nullable();
             
 
 

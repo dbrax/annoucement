@@ -2,31 +2,68 @@
 
 namespace Epmnzava\Annoucement;
 
-class Annoucement
+use Epmnzava\Annoucement\Models\Annoucement as AnnoucementModel;
+use Epmnzava\Annoucement\Models\UserAnnoucement;
+
+class Annoucement extends UserQueries
 {
 
 
-    public function create_annoucement($title, $message, $type, $to = null, $queryRule = null)
+    public function create_annoucement($title, $message, $type, $userid = null, $users = null)
     {
 
         if (config("annoucement.individual_annoucement_tag") == $type) {
 
-            $this->createIndividualAnnoucement($title, $message, $type, $to);
+            $res = $this->createIndividualAnnoucement($title, $message, $type, $userid);
         } else {
 
-            if (config("annoucement.withQueryRule"))
-                $this->createBroadCastAnnoucement($title, $message, $type, $queryRule);
-            else
-                $this->createBroadCastAnnoucement($title, $message, $type);
+            $res = $this->createBroadCastAnnoucement($title, $message, $type, $users);
         }
+
+
+        return $res;
     }
 
 
-    public function createIndividualAnnoucement($title, $message, $type, $to)
+    public function createIndividualAnnoucement($title, $message, $type, $userid)
     {
+        $annoucement = AnnoucementModel::create([
+            "title" => $title,
+            "message" => $message,
+            "type" => $type,
+
+
+        ]);
+
+
+        $userannoucement = UserAnnoucement::create([
+            "annoucementid" => $annoucement->id,
+            "userid" => $userid
+        ]);
+
+
+        return ["status" => 1, "message" => "Annoucement Created Successfully"];
     }
 
-    public function createBroadCastAnnoucement($title, $message, $type, $query = null)
+    public function createBroadCastAnnoucement($title, $message, $type, $users = null)
     {
+        $annoucement = AnnoucementModel::create([
+            "title" => $title,
+            "message" => $message,
+            "type" => $type,
+
+
+        ]);
+
+
+        foreach ($users as $user) {
+            $userannoucement = UserAnnoucement::create([
+                "annoucementid" => $annoucement->id,
+                "userid" => $user->id
+            ]);
+        }
+
+
+        return ["status" => 1, "message" => "Annoucement Created Successfully"];
     }
 }
