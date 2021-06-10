@@ -22,7 +22,7 @@ class CreateAnnoucementTypeTable extends Migration
      */
     public function up()
     {
-        Schema::create('annoucementtypes', function (Blueprint $table) {
+        Schema::create('annoucement_types', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('type'); // individual broadcast
             $table->timestamps();
@@ -36,6 +36,6 @@ class CreateAnnoucementTypeTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('annoucementtypes');
+        Schema::dropIfExists('annoucement_types');
     }
 }

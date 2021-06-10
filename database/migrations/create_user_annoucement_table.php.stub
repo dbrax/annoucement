@@ -22,7 +22,7 @@ class CreateUserAnnoucementTable extends Migration
      */
     public function up()
     {
-        Schema::create('userannoucements', function (Blueprint $table) {
+        Schema::create('user_annoucements', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('annoucementid');
             $table->string('userid'); // annoucment sent to a particular user
@@ -45,6 +45,6 @@ class CreateUserAnnoucementTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('userannoucements');
+        Schema::dropIfExists('user_annoucements');
     }
 }
