@@ -30,7 +30,7 @@ class Annoucement extends UserQueries
         $annoucement = AnnoucementModel::create([
             "title" => $title,
             "message" => $message,
-            "type" => $type,
+            "annoucementtype" => $type,
 
 
         ]);
@@ -50,7 +50,7 @@ class Annoucement extends UserQueries
         $annoucement = AnnoucementModel::create([
             "title" => $title,
             "message" => $message,
-            "type" => $type,
+            "annoucementtype" => $type,
 
 
         ]);
