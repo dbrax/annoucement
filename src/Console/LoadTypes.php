@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Artisan;
 
 use Illuminate\Console\Command;
 
-class Init extends Command
+class LoadTypes extends Command
 {
     protected $signature = 'annoucement:loadtypes ';
 
