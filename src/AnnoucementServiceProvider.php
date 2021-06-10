@@ -10,6 +10,8 @@
 
 namespace Epmnzava\Annoucement;
 
+use Epmnzava\Annoucement\Console\Init;
+use Epmnzava\Annoucement\Console\LoadTypes;
 use Illuminate\Support\ServiceProvider;
 
 class AnnoucementServiceProvider extends ServiceProvider
@@ -32,13 +34,19 @@ class AnnoucementServiceProvider extends ServiceProvider
                 __DIR__ . '/../config/config.php' => config_path('annoucement.php'),
             ], 'config');
 
+            $this->commands([
+                LoadTypes::class,
+                Init::class
+            ]);
+
+
 
             //publishing migrations here..
             if (!class_exists('CreateUserAnnoucementTable') && !class_exists('CreateAnnoucementTypeTable') && !class_exists('CreateAnnoucementTable')) {
                 $this->publishes([
 
                     __DIR__ . '/../database/migrations/create_annoucement_table.php.stub' => database_path('migrations/' . date('Y_m_d_His', time()) . '_create_annoucement_table.php'),
-                    
+
                     __DIR__ . '/../database/migrations/create_user_annoucement_table.php.stub' => database_path('migrations/' . date('Y_m_d_His', time()) . '_create_user_annoucement_table.php'),
 
                     __DIR__ . '/../database/migrations/create_annoucement_type_table.php.stub' => database_path('migrations/' . date('Y_m_d_His', time()) . '_create_annoucement_type_table.php'),
