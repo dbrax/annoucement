@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Artisan;
 
 class Init extends Command
 {
-    protected $signature = 'annoucement:init ';
+    protected $signature = 'annoucement:init';
 
 
     protected $description = 'This command will initialize this library on your laravel application';
