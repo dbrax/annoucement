@@ -8,7 +8,7 @@ use Epmnzava\Annoucement\Models\UserAnnoucement;
 class Annoucement extends UserQueries
 {
 
-
+          
     public function create_annoucement($title, $message, $type, $userid = null, $users = null)
     {
 

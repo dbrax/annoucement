@@ -10,7 +10,7 @@ class UserAnnoucement extends Model
 
     public $guarded = [];
 
-    public function Annoucement()
+    public function annoucement()
     {
 
         return $this->belongsTo(Annoucement::class, "annoucementid");

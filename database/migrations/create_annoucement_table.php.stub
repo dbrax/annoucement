@@ -29,6 +29,7 @@ class CreateAnnoucementTable extends Migration
 
             $table->text("message");
             $table->string("annoucementtype"); //individual broadcast
+            $table->integer("createdBy")->nullable();
 
 
 
